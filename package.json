@@ -9,5 +9,8 @@
     "express-session": "^1.18.2",
     "mysql2": "^3.16.0",
     "util": "^0.12.5"
+  },
+  "scripts" {
+    "start": "node index.js"
   }
 }
