@@ -1,0 +1,47 @@
+<%- include('../admin/navbar.ejs') %>
+
+  <style>
+    .slider-img{
+      height:180px;
+      object-fit:cover;
+      transition:0.4s;
+    }
+    .card:hover .slider-img{
+      transform:scale(1.05);
+    }
+  </style>
+
+<div class="container mt-4">
+
+  <h3 class="mb-4 text-center">Slider Images</h3>
+
+  <div class="row g-4">
+
+    <% sliders.forEach(function(slide){ %>
+
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card shadow-sm h-100">
+          <img src="/uploads/<%= slide.image %>" class="card-img-top slider-img">
+
+          <div class="card-body text-center">
+            <p class="small text-muted mb-2">
+              <%= slide.image %>
+            </p>
+
+            <a href="/admin/home/delete_slider/<%= slide.id %>"  class="btn btn-sm btn-danger">
+              ✏️  Delete
+            </a>
+             <a href="/admin/home/update_slider/<%= slide.id %>"  class="btn btn-sm btn-warning m-2">
+            🗑  Update Slider
+            </a>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+
+  </div>
+
+</div>
+
+
+<%- include('../admin/footer.ejs') %>

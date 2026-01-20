@@ -1,0 +1,28 @@
+<%- include('../admin/navbar') %>
+<main class="content">
+  <h4 class="text-center">Add Washing Machines</h4>
+
+  <div class="container mt-4">
+    <form action="/admin/products/save_washing_machines" method="POST" enctype="multipart/form-data">
+      <div class="mb-3">
+        <label for="brand" class="form-label">Brand</label>
+        <input type="text" class="form-control" id="brand" name="brand" required>
+      </div>
+      <div class="mb-3">
+        <label for="model" class="form-label">Model</label>
+        <input type="text" class="form-control" id="model" name="model" required>
+      </div>    
+    
+      <div class="mb-3">
+        <label for="price" class="form-label">Price</label>
+        <input type="number" class="form-control" id="price" name="price" required>
+        </div>
+        <div class="mb-3">
+            <label for="image" class="form-label">Image</label>
+            <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Add Washing Machine</button>
+    </form>
+    </div>
+</main>
+<%- include('../admin/footer') %>

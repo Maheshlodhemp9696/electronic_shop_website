@@ -1,0 +1,46 @@
+<%- include('../admin/navbar.ejs') %>
+  <style>
+    .slider-img{
+      height:180px;
+      object-fit:cover;
+      transition:0.4s;
+    }
+    .card:hover .slider-img{
+      transform:scale(1.05);
+    }
+  </style>
+<div class="container mt-4">
+
+  <h3 class="mb-4 text-center">Refrigerators</h3>
+
+  <div class="row g-4">
+    <% refrigerators.forEach(function(refrigerator){ %>
+      <div class="col-lg-4 col-md-8 col-sm-6">
+        <div class="card shadow-sm h-100">
+          <img src="/uploads/<%= refrigerator.image %>" class="card-img-top slider-img">
+          <div class="card-body text-center">
+            <p class="small text-muted mb-2">
+              <%= refrigerator.image %>
+            </p>
+            <h5 class="small text-dark mb-2">
+              <%= refrigerator.refreigerator_name %>
+            </h5>
+            <h5 class="small text-dark mb-2">
+              <%= refrigerator.refreigerator_model %>
+            </h5>
+            <h5 class="small text-dark mb-2">
+              <%= refrigerator.price %>
+            </h5>
+            <a href="/admin/products/delete_refreigerator/<%= refrigerator.id %>"  class="btn btn-sm btn-danger">
+             🗑  Delete
+            </a>
+             <a href="/admin/products/update_refreigerator/<%= refrigerator.id %>"  class="btn btn-sm btn-warning m-2">
+             ✏️ Update refrigerators
+            </a>
+          </div>    
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+<%- include('../admin/footer.ejs') %>

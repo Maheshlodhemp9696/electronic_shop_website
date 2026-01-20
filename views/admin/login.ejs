@@ -1,0 +1,201 @@
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+  min-height: 100vh;
+}
+
+/* Gradient Background */
+.login-wrapper{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg,#0d6efd,#6610f2,#20c997);
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
+}
+
+/* Card */
+.login-card{
+  width: 100%;
+  max-width: 380px;
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(12px);
+  padding: 35px;
+  border-radius: 18px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+}
+
+.login-card h2{
+  font-size: 28px;
+}
+
+.login-card p{
+  font-size: 14px;
+  margin-bottom: 25px;
+  opacity: 0.9;
+}
+
+/* Inputs */
+.input-box{
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.input-box i{
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  color: #fff;
+  opacity: 0.8;
+}
+
+.input-box input{
+  width: 100%;
+  padding: 12px 15px 12px 42px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  background: rgba(255,255,255,0.25);
+  color: #fff;
+}
+
+.input-box input::placeholder{
+  color: #eee;
+}
+
+/* Button */
+button{
+  width: 100%;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  margin-top: 10px;
+  background: linear-gradient(45deg,#ffc107,#fd7e14);
+  color: #000;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+button:hover{
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+}
+
+/* Links */
+.extra{
+  margin-top: 15px;
+  font-size: 13px;
+}
+
+.extra a{
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.9;
+}
+
+.extra a:hover{
+  text-decoration: underline;
+}
+
+/* Gradient Animation */
+@keyframes gradientMove{
+  0%{ background-position: 0% 50%; }
+  50%{ background-position: 100% 50%; }
+  100%{ background-position: 0% 50%; }
+}
+
+.login-wrapper{
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* Background image + gradient overlay */
+  background:
+    linear-gradient(rgba(13,110,253,0.7), rgba(102,16,242,0.7)),
+    url("https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1920&q=80");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+</style>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="login-wrapper">
+  <div class="login-card">
+    <h2>Welcome Back</h2>
+    <p>Login to MP Electronics</p>
+<!-- onsubmit="loginSuccess(event)" -->
+    <form  method="post" action="admin/save_login" >
+      <div class="input-box">
+        <i class="bi bi-envelope"></i>
+        <input type="email" name="email" placeholder="Email address" required>
+      </div>
+      
+      <div class="input-box">
+        <i class="bi bi-lock"></i>
+        <input type="password" name="password" placeholder="Password" required>
+      </div>
+
+      <button type="submit">Login</button>
+
+      <div class="extra">
+        <a href="#">Forgot Password?</a>
+        <span> | </span>
+        <a href="admin/register">Create Account (Registration)</a>
+      </div>
+    </form>
+  </div>
+</div>
+
+</body>
+</html>
+
+<script>
+function loginSuccess(e){
+  e.preventDefault(); // page reload stop
+
+  Swal.fire({
+    icon: 'success',
+    title: 'Login Successful!',
+    text: 'Welcome to MP Electronics 🎉',
+    confirmButtonColor: '#0d6efd',
+    confirmButtonText: 'Continue',
+    backdrop: `
+      rgba(0,0,0,0.6)
+      url("https://media.giphy.com/media/26ufdipQqU2lhNA4g/giphy.gif")
+      center top
+      no-repeat
+    `
+  }).then((result) => {
+    if (result.isConfirmed) {
+      // Redirect after login
+      window.location.href = "dashboard.html";
+    }
+  });
+}
+</script>

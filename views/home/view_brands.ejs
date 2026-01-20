@@ -1,0 +1,46 @@
+<%- include('../admin/navbar.ejs') %>
+
+  <style>
+    .slider-img{
+      height:180px;
+      object-fit:cover;
+      transition:0.4s;
+    }
+    .card:hover .slider-img{
+      transform:scale(1.05);
+    }
+  </style>
+
+<div class="container mt-4">
+
+  <h3 class="mb-4 text-center">Brands Images</h3>
+
+  <div class="row g-4">
+    <% brands.forEach(function(brands){ %>
+
+      <div class="col-lg-3 col-md-4 col-sm-6">
+        <div class="card shadow-sm h-100">
+          <img src="/uploads/<%= brands.image %>" class="card-img-top slider-img">
+
+          <div class="card-body text-center">
+            <p class="small text-muted mb-2">
+              <%= brands.image %>
+            </p>
+
+            <a href="/admin/home/delete_brands/<%= brands.id %>"  class="btn btn-sm btn-danger">
+             🗑  Delete
+            </a>
+             <a href="/admin/home/update_brands/<%= brands.id %>"  class="btn btn-sm btn-warning m-2">
+              ✏️ Update brands
+            </a>
+          </div>
+        </div>
+      </div>
+    <% }) %>
+
+  </div>
+
+</div>
+
+
+<%- include('../admin/footer.ejs') %>

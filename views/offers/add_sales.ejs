@@ -1,0 +1,37 @@
+<%- include('../admin/navbar') %>
+
+<main class="content">
+<h4 class="text-center">welcome admin  in Add Sales Overview</h4>
+    <!-- Cards -->
+    <div class="cards">
+     <div class="container mt-4">
+
+        <div class="card">
+  <div class="card-body">
+ <form action="/admin/offers/save_add_sales" method="POST" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="title" class="form-label">Sales Discount</label>
+    <input type="text" class="form-control" id="title" name="discount" placeholder="Enter sales discount" required>
+    </div>
+    <div class="mb-3">
+    <label for="title" class="form-label">Sales Item</label>
+    <input type="text" class="form-control" id="title" name="offer_product" placeholder="Enter sales item" required>
+    </div>
+     <div class="mb-3">
+    <label for="title" class="form-label">Sales Details</label>
+    <input type="text" class="form-control" id="title" name="offer_details" placeholder="Enter sales details" required>
+    </div>
+     <div class="mb-3">
+    <label for="title" class="form-label">valid date</label>
+    <input type="date" class="form-control" id="title" name="valid" placeholder="Enter sales price" required>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add Sales</button>
+</form>
+</div>
+</div>  
+</div>
+ </div>   
+</div>
+</main>
+<%- include('../admin/footer.ejs') %>

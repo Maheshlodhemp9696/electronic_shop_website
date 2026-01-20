@@ -1,0 +1,43 @@
+<%- include('../admin/navbar.ejs') %>
+  <style>
+    .slider-img{
+      height:180px;
+      object-fit:cover;
+      transition:0.4s;
+    }
+    .card:hover .slider-img{
+      transform:scale(1.05);
+    }
+  </style>
+<div class="container mt-4">
+
+  <h3 class="mb-4 text-center">Owner</h3>
+
+  <div class="row g-4">
+    <% owner.forEach(function(owner){ %>
+      <div class="col-lg-5 col-md-8 col-sm-6">
+        <div class="card shadow-sm h-100">
+          <img src="/uploads/<%= owner.image %>" class="card-img-top slider-img">
+          <div class="card-body text-center">
+            <p class="small text-muted mb-2">
+              <%= owner.image %>
+            </p>
+            <h5 class="small text-dark mb-2">
+              <%= owner.owner_name %>
+            </h5>
+             <p class="small text-muted mb-2">
+              <%= owner.owner_discription %>
+            </p>
+            <a href="/admin/about/delete_owner/<%= owner.id %>"  class="btn btn-sm btn-danger">
+              🗑 Delete
+            </a>
+             <a href="/admin/about/update_owner/<%= owner.id %>"  class="btn btn-sm btn-warning m-2">
+             ✏️  Update Owner
+            </a>
+          </div>    
+        </div>
+      </div>
+    <% }) %>
+  </div>
+</div>
+<%- include('../admin/footer.ejs') %>

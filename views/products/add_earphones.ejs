@@ -1,0 +1,26 @@
+<%- include('../admin/navbar') %>
+<main>
+    <div class="container">
+        <h4 class="text-center mb-4">Add Earphones</h4>
+        <form class="m-5" action="/admin/products/save_earphones" method="POST" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="earphone_name" class="form-label">Earphones brand</label>
+                <input type="text" class="form-control" id="earphone_name" name="brand" required>
+            </div>
+            <div class="mb-3">
+                <label for="earphone_model" class="form-label">Earphones Model</label>
+                <input type="text" class="form-control" id="earphone_model" name="model" required>
+            </div>
+            <div class="mb-3">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" class="form-control" id="price" name="price" required>
+            </div>
+            <div class="mb-3">
+                <label for="image" class="form-label">Earphones Image</label>
+                <input type="file" class="form-control" id="image" name="image" accept="image/*" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Add Earphones</button>    
+        </form>
+    </div>
+</main>
+<%- include('../admin/footer') %>

@@ -1,0 +1,69 @@
+<%- include('../admin/navbar.ejs') %>
+
+<style>
+.form-wrapper{
+  max-width:700px;
+  margin:auto;
+  background:#fff;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.form-title{
+  font-weight:700;
+}
+
+.form-control{
+  border-radius:8px;
+}
+</style>
+
+<div class="container mt-5">
+  <div class="form-wrapper">
+
+    <h4 class="text-center mb-4 form-title">Update Service</h4>
+
+    <form action="/admin/about/save_update_services" method="POST">
+
+      <!-- Hidden ID -->
+      <input type="hidden" name="id" value="<%= services.id %>">
+
+      <!-- Service Name -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Service Name</label>
+        <input 
+          type="text" 
+          name="service" 
+          class="form-control"
+          value="<%= services.service %>"
+          required>
+      </div>
+
+      <!-- Service Description -->
+      <div class="mb-3">
+        <label class="form-label fw-semibold">Service Description</label>
+        <textarea 
+          name="service_discription" 
+          class="form-control" 
+          rows="4"
+          required><%= services.service_discription %></textarea>
+      </div>
+
+      <!-- Buttons -->
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-success px-4">
+          💾 Update Service
+        </button>
+
+        <a href="/admin/about/view_services" class="btn btn-secondary px-4 ms-2">
+          ⬅ Back
+        </a>
+      </div>
+
+    </form>
+
+  </div>
+</div>
+
+<%- include('../admin/footer.ejs') %>

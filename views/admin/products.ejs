@@ -1,0 +1,86 @@
+<%- include('navbar') %>
+
+
+<main class="content">
+<h4 class="text-center">welcome admin  in Products Overview</h4>
+    <!-- Cards -->
+    <div class="cards">
+     <div class="container mt-4">
+
+  <table class="table table-bordered table-hover align-middle text-center">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Module Name</th>
+        <th>View</th>
+        <th>Add</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td class="fw-bold">Mobiles</td>
+        <td>
+          <a href="/admin/products/view_mobile" class="btn btn-warning btn-sm">
+            View Mobiles
+          </a>
+        </td>
+        <td>
+          <a href="/admin/products/add_mobile" class="btn btn-success btn-sm">
+            Add Mobiles
+          </a>
+        </td>
+      </tr>
+    <tr>
+        <td>2</td>
+        <td class="fw-bold"> Refrigerators</td>
+        <td>
+          <a href="/admin/products/view_refreigerator" class="btn btn-warning btn-sm">
+            View Refrigerators
+          </a>
+        </td>
+        <td>
+          <a href="/admin/products/add_refreigerator" class="btn btn-success btn-sm">
+            Add Refrigerators
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td class="fw-bold">Washing Machines</td>
+        </td>
+        <td>
+          <a href="/admin/products/view_washing_machines" class="btn btn-warning btn-sm">
+          view Washing Machines
+          </a>
+        </td>
+        <td>
+          <a href="/admin/products/add_washing_machines" class="btn btn-success btn-sm">
+            Add Washing Machines
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td class="fw-bold"> Ear Phones </td>
+        <td>
+          <a href="/admin/products/view_earphones" class="btn btn-warning btn-sm">
+            View Earphones
+          </a>
+        </td>
+        <td>
+          <a href="/admin/products/add_earphones" class="btn btn-success btn-sm">
+            Add Earphones
+          </a>
+        </td>
+      </tr>
+    </tbody>
+
+  </table>
+
+</div>
+       </div>
+  </main>
+</div>
+
+<%- include('footer') %>

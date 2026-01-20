@@ -1,0 +1,225 @@
+<%- include('navbar') %>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<style>
+.about-header {
+  height: 45vh;
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("about_bg.jpg") center/cover no-repeat;
+}
+
+@media (max-width: 768px) {
+  .about-header {
+    height: 35vh;
+  }
+}
+    .map-container {
+      width: 100%;
+      height: 400px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    }
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+    }
+</style>
+<!-- ABOUT US HEADER -->
+<section class="about-header d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h1 class="display-5 fw-bold">ALL PRODUCTS</h1>
+    <p class="lead mb-0">Trusted Electronics Store Since 2005</p>
+  </div>
+</section>
+
+
+
+<div class="container my-5">
+  <h2 class="text-center mb-4"> <i class="bi bi-geo-alt-fill"></i>  Our Location</h2>
+
+  <div class="map-container">
+    <iframe 
+      src="https://www.google.com/maps?q=Pune,Maharashtra,India&output=embed"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+
+<style>
+/* Full screen */
+.electronics-form{
+  min-height:100vh;
+  background: linear-gradient(135deg,#111827,#1f2933);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:20px;
+}
+
+/* Glass card */
+.form-box{
+  width:100%;
+  max-width:900px;
+  background:rgba(255,255,255,0.1);
+  backdrop-filter:blur(14px);
+  border-radius:22px;
+  padding:35px;
+  color:#fff;
+  box-shadow:0 30px 60px rgba(0,0,0,0.4);
+}
+
+/* Inputs */
+.form-control, .form-select{
+  background:rgba(255,255,255,0.15);
+  border:none;
+  color:#d2bcbc;
+}
+.form-control::placeholder{
+  color:#d1d5db;
+}
+.form-control:focus, .form-select:focus{
+  background:rgba(255,255,255,0.25);
+  box-shadow:none;
+  color:#0f0c0c;
+}
+
+/* Button */
+.btn-submit{
+  background:linear-gradient(45deg,#22c55e,#16a34a);
+  color:#fff;
+  font-weight:600;
+  border-radius:50px;
+}
+.btn-submit:hover{
+  background:linear-gradient(45deg,#16a34a,#22c55e);
+}
+</style>
+
+
+<section class="electronics-form">
+  <div class="form-box">
+
+    <h2 class="text-center fw-bold mb-4">
+      <i class="bi bi-cpu-fill text-success"></i> Electronics Inquiry Form
+    </h2>
+
+    <form action="/save_enquiry" method="post">
+      <div class="row g-3">
+
+        <!-- Name -->
+        <div class="col-md-6">
+          <input type="text" name="name" class="form-control py-3" placeholder="Customer Name" required>
+        </div>
+
+        <!-- Mobile -->
+        <div class="col-md-6">
+          <input type="tel" name="mobile" class="form-control py-3" placeholder="Mobile Number" required>
+        </div>
+
+        <!-- Email -->
+        <div class="col-md-6">
+          <input type="email" name="email" class="form-control py-3" placeholder="Email Address">
+        </div>
+
+        <!-- City -->
+        <div class="col-md-6">
+          <input type="text" name="city" class="form-control py-3" placeholder="City / Location">
+        </div>
+
+        <!-- Product Category -->
+        <div class="col-md-6">
+          <select name="category" class="form-select py-3">
+            <option selected disabled>Product Category</option>
+            <option>Mobile</option>
+            <option>TV</option>
+            <option>Laptop</option>
+            <option>Home Appliances</option>
+            <option>Accessories</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <!-- Brand -->
+        <div class="col-md-6">
+          <input type="text" name="brand" class="form-control py-3" placeholder="Brand Name (Samsung, LG...)">
+        </div>
+
+        <!-- Model -->
+        <div class="col-md-6">
+          <input type="text" name="model" class="form-control py-3" placeholder="Model Number">
+        </div>
+
+        <!-- Purpose -->
+        <div class="col-md-6">
+          <select name="purpose" class="form-select py-3">
+            <option selected disabled>Purpose</option>
+            <option>Buy New Product</option>
+            <option>Repair / Service</option>
+            <option>Exchange</option>
+            <option>Bulk Order</option>
+          </select>
+        </div>
+
+        <!-- Budget -->
+        <div class="col-md-6">
+          <select name="budget" class="form-select py-3">
+            <option selected disabled>Budget Range</option>
+            <option>Below ₹5,000</option>
+            <option>₹5,000 – ₹10,000</option>
+            <option>₹10,000 – ₹25,000</option>
+            <option>₹25,000 – ₹50,000</option>
+            <option>Above ₹50,000</option>
+          </select>
+        </div>
+
+        <!-- Submit -->
+        <div class="col-12 text-center">
+          <button class="btn btn-submit px-5 py-3">
+            <i class="bi bi-send-check-fill"></i> Submit Inquiry
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const status = params.get("status");
+
+  if (status === "success") {
+    Swal.fire({
+      icon: "success",
+      title: "Success",
+      text: "Enquiry submitted successfully!",
+    });
+  }
+
+  if (status === "duplicate") {
+    Swal.fire({
+      icon: "error",
+      title: "Already Submitted",
+      text: "This email has already submitted an enquiry.",
+    });
+  }
+
+  if (status === "error") {
+    Swal.fire({
+      icon: "error",
+      title: "Error",
+      text: "Something went wrong. Please try again.",
+    });
+  }
+// function showPopup() {
+//     alert("your are applied to Enquiry in MP electronics")
+// }
+</script>
+
+<%- include('footer') %>

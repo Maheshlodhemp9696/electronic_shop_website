@@ -1,0 +1,78 @@
+<%- include('navbar') %>
+
+
+<main class="content">
+<h4 class="text-center">welcome admin About Overview</h4>
+
+    <!-- Cards -->
+    <div class="cards">
+     <div class="container mt-4">
+
+  <table class="table table-bordered table-hover align-middle text-center">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Module Name</th>
+        <th>View</th>
+        <th>Add</th>
+      </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td class="fw-bold">About Us</td>
+        <td>
+          <a href="/admin/home/view_about" class="btn btn-warning btn-sm">
+            View About
+          </a>
+        </td>
+        <td>
+          <a href="/admin/home/add_about" class="btn btn-success btn-sm">
+            Add About
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="fw-bold">Services Section
+        </td>
+        <td>
+          <a href="/admin/about/view_services" class="btn btn-warning btn-sm">
+          view Services
+          </a>
+        </td>
+        <td>
+          <a href="/admin/about/add_services" class="btn btn-success btn-sm">
+            Add Services
+          </a>
+        </td>
+      </tr>
+
+       <tr>
+        <td>3</td>
+        <td class="fw-bold">Owner Section
+        </td>
+        <td>
+          <a href="/admin/about/view_owner" class="btn btn-warning btn-sm">
+          view Owner
+          </a>
+        </td>
+        <td>
+          <a href="/admin/about/add_owner" class="btn btn-success btn-sm">
+            Add Owner
+          </a>
+        </td>
+      </tr>
+    
+    </tbody>
+
+  </table>
+
+</div>
+
+      
+       </div>
+  </main>
+</div>
+
+<%- include('footer') %>

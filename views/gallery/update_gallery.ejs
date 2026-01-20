@@ -1,0 +1,26 @@
+<%- include('../admin/navbar.ejs') %>
+<main class="content">
+<h4 class="text-center">welcome admin  in Update Gallery Overview</h4>
+    <!-- Cards -->
+    <div class="cards">
+     <div class="container mt-4">
+
+ <form action="/admin/gallery/save_update_gallery/<%= gallery.id %>" method="POST" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="title" class="form-label">Image Caption</label>
+    <input type="text" class="form-control" id="title" name="caption" value="<%= gallery.caption %>" required>
+  </div>
+  <div class="mb-3">
+    <label for="image" class="form-label">Image</label>
+    <input type="file" class="form-control" id="image" name="image" placeholder="<%= gallery.image %>">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Update Gallery</button>
+</form>
+
+</div>
+
+       </div>   
+       </div>
+</main>
+<%- include('../admin/footer.ejs') %>

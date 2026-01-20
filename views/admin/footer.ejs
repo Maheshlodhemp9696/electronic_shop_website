@@ -1,0 +1,25 @@
+
+<script>
+const counters = document.querySelectorAll('.counter');
+
+counters.forEach(counter => {
+  let start = 0;
+  const target = +counter.getAttribute('data-target');
+  const speed = 200;
+
+  const update = () => {
+    const increment = target / speed;
+    if(start < target){
+      start += increment;
+      counter.innerText = Math.floor(start);
+      requestAnimationFrame(update);
+    } else {
+      counter.innerText = target;
+    }
+  };
+  update();
+});
+</script>
+
+</body>
+</html>

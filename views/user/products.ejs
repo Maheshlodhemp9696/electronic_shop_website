@@ -1,0 +1,167 @@
+<%- include('navbar') %>
+
+<style>
+.about-header {
+  height: 45vh;
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("about_bg.jpg") center/cover no-repeat;
+}
+
+@media (max-width: 768px) {
+  .about-header {
+    height: 35vh;
+  }
+}
+
+</style>
+
+
+<!-- ABOUT US HEADER -->
+<section class="about-header d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h1 class="display-5 fw-bold">ALL PRODUCTS</h1>
+    <p class="lead mb-0">Trusted Electronics Store Since 2005</p>
+  </div>
+</section>
+
+<style>
+.about-title{
+  position: relative;
+  display: inline-block;
+  font-size: 32px;
+  font-weight: 600;
+  text-align: center;
+   margin:20px;
+}
+.about-title::after{
+ 
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+ width: 100%;
+  height: 4px;
+  background: #0d6efd;
+  border-radius: 5px;
+}
+</style>
+
+
+<div class="container mt-3 overflow-x-hidden">
+  <div class="row mt-5 mb-3">
+    <h3 class="about-title">Mobiles</h3>
+    <% for(let i=0; i<mobiles.length; i++){ %>
+    <div class="col-md-3 col-lg-3 p-3">
+  <div class="card product-card h-100 border-0 shadow-sm">
+
+    <!-- Product Image -->
+    <div class="overflow-hidden">
+      <img src="pro6.jpg" class="card-img-top product-img h-100" alt="Product">
+    </div>
+
+    <!-- Product Body -->
+    <div class="card-body text-center">
+      <h6 class="text-muted mb-1"><%= mobiles[i].mobile_name %></h6>
+      <h5 class="card-title fw-bold"><%= mobiles[i].mobile_model %></h5>
+ <!-- Price -->
+      <h5 class="fw-bold text-success mb-3">₹<%= mobiles[i].price %></h5>
+
+      <a href="/contact" class="btn btn-primary btn-sm rounded-pill px-3 ms-2">
+        Buy Now
+      </a>
+    </div>
+
+  </div>
+</div>
+<% } %>
+
+
+  <!-- Refregetor section -->
+
+ <div class="row mt-5 mb-3">
+    <h3 class="about-title">Refregetors</h3>
+<% for(let i=0; i<refrigerators.length; i++){ %>
+ <div class="col-md-3 col-lg-3 p-3">
+  <div class="card product-card h-100 border-0 shadow-sm">
+   
+    <div class="overflow-hidden">
+      <img src="<%= refrigerators[i].image %>" class="card-img-top product-img" alt="Product">
+    </div>
+
+    <!-- Product Body -->
+    <div class="card-body text-center">
+      <h6 class="text-muted mb-1"><%= refrigerators[i].refreigerator_name %></h6>
+      <h5 class="card-title fw-bold"><%= refrigerators[i].refreigerator_model %></h5>
+ <!-- Price -->
+      <h5 class="fw-bold text-success mb-3">₹<%= refrigerators[i].price %></h5>
+
+      <a href="/contact" class="btn btn-primary btn-sm rounded-pill px-3 ms-2">
+        Buy Now
+      </a>
+    </div>
+
+  </div>
+</div>
+<% } %>
+  </div>
+
+ <div class="row mt-5 mb-3">
+    <h3 class="about-title">Washing Machine</h3>
+<% for(let i=0; i<washing_machines.length; i++){ %>
+ <div class="col-md-3 col-lg-3 p-3">
+  <div class="card product-card h-100 border-0 shadow-sm">
+
+    <!-- Product Image -->
+    <div class="overflow-hidden">
+      <img src="<%= washing_machines[i].image %>" class="card-img-top product-img" alt="Product">
+    </div>
+
+    <!-- Product Body -->
+    <div class="card-body text-center">
+      <h6 class="text-muted mb-1"><%= washing_machines[i].brand %></h6>
+      <h5 class="card-title fw-bold"><%= washing_machines[i].model %></h5>
+ <!-- Price -->
+      <h5 class="fw-bold text-success mb-3">₹79,999</h5>
+
+      <a href="/contact" class="btn btn-primary btn-sm rounded-pill px-3 ms-2">
+        Buy Now
+      </a>
+    </div>
+
+  </div>
+</div>
+<% } %>
+  </div>
+
+  <div class="row mt-5 mb-3">
+    <h3 class="about-title">Ear Phones</h3>
+<% for(let i=0; i<earphones.length; i++){ %>
+ <div class="col-md-3 col-lg-3 p-3">
+  <div class="card product-card h-100 border-0 shadow-sm">
+
+    <!-- Product Image -->
+    <div class="overflow-hidden">
+      <img src="<%= earphones[i].image %>" class="card-img-top product-img" alt="Product">
+    </div>
+
+    <!-- Product Body -->
+    <div class="card-body text-center">
+      <h6 class="text-muted mb-1"><%= earphones[i].brand %></h6>
+      <h5 class="card-title fw-bold"><%= earphones[i].model %></h5>
+ <!-- Price -->
+
+    <h5 class="fw-bold text-success mb-3">₹<%= earphones[i].price %></h5>
+      <a href="/contact" class="btn btn-primary btn-sm rounded-pill px-3 ms-2">
+        Buy Now
+      </a>
+    </div>
+  </div>
+</div>
+<% } %>
+
+</div>
+</div>
+</div>
+
+<%- include('footer') %>

@@ -1,0 +1,62 @@
+<%- include('navbar') %>
+
+
+<main class="content">
+<h4 class="text-center">welcome admin  in Offers Overview</h4>
+
+    <!-- Cards -->
+    <div class="cards">
+     <div class="container mt-4">
+
+  <table class="table table-bordered table-hover align-middle text-center">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Module Name</th>
+        <th>View</th>
+        <th>Add</th>
+      </tr>
+    </thead>
+    <tbody>
+         <tr>
+        <td>1</td>
+        <td class="fw-bold">Sales</td>
+        <td>
+          <a href="/admin/offers/view_sales" class="btn btn-warning btn-sm">
+            View Sales
+          </a>
+        </td>
+        <td>
+          <a href="/admin/offers/add_sales" class="btn btn-success btn-sm">
+            Add Sales
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td class="fw-bold">Offers</td>
+        <td>
+          <a href="/admin/offers/view_offers" class="btn btn-warning btn-sm">
+            View Offers
+          </a>
+        </td>
+        <td>
+          <a href="/admin/offers/add_offers" class="btn btn-success btn-sm">
+            Add Offers
+          </a>
+        </td>
+      </tr>
+    <tr>
+    
+    </tbody>
+
+  </table>
+
+</div>
+
+      
+       </div>
+  </main>
+</div>
+
+<%- include('footer') %>

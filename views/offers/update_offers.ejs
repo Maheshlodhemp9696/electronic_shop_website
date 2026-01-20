@@ -1,0 +1,38 @@
+<%- include('../admin/navbar') %>
+
+<main class="content">
+<h4 class="text-center">welcome admin  in Update Offers Overview</h4>
+    <!-- Cards -->
+    <div class="cards">
+     <div class="container mt-4">
+
+ <form action="/admin/offers/save_update_offers/<%= offers.id %>" method="POST" enctype="multipart/form-data">
+   <div class="mb-3"> 
+    <label for="title" class="form-label">Offer Discount</label>
+    <input type="text" class="form-control" id="title" name="discount" value="<%= offers.discount %>" required>
+    </div>
+    <div class="mb-3">
+    <label for="title" class="form-label">Offer Item</label>
+    <input type="text" class="form-control" id="title" name="name" value="<%= offers.name %>" required>
+    </div>
+     <div class="mb-3">
+    <label for="title" class="form-label">Offer Model</label>
+    <input type="text" class="form-control" id="title" name="model" value="<%= offers.model %>" required>
+    </div>
+    
+     <div class="mb-3">
+    <label for="title" class="form-label">Offer Price</label>
+    <input type="text" class="form-control" id="title" name="offer_price" value="<%= offers.offer_price %>" required>
+    </div>
+  <div class="mb-3">
+    <label for="image" class="form-label">Offer Image</label>
+    <input type="file" class="form-control" id="image" name="image" placeholder="<%= offers.image %>">
+    </div>
+    <button type="submit" class="btn btn-primary">Update Offer</button>
+</form>
+</div>
+
+       </div>   
+       </div>
+</main>
+<%- include('../admin/footer.ejs') %>

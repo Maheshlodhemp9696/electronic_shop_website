@@ -1,0 +1,170 @@
+<%- include('navbar.ejs') %>
+<!-- Include Font Awesome CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+
+<style>
+.about-header {
+  height: 45vh;
+  background: 
+    linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+    url("about_bg.jpg") center/cover no-repeat;
+}
+
+@media (max-width: 768px) {
+  .about-header {
+    height: 35vh;
+  }
+}
+
+h3{
+  color:rgb(29, 103, 133);
+}
+
+
+
+.hand-icon{
+  font-size: 28px;
+  color: #0d6efd;
+  transition: transform 0.3s ease, color 0.3s;
+  cursor: pointer;
+}
+.hand-icon:hover{
+  transform: scale(1.2);
+  color: #198754;
+}
+</style>
+
+
+<!-- ABOUT US HEADER -->
+<section class="about-header d-flex align-items-center justify-content-center">
+  <div class="text-center text-white">
+    <h1 class="display-5 fw-bold">ABOUT US</h1>
+    <p class="lead mb-0">Trusted Electronics Store Since 2005</p>
+  </div>
+</section>
+
+
+
+
+<div class="container">
+  <div class="row">
+      </div>
+  <div class="row">
+    <div class="col-md-6 p-5">
+   
+
+<style>
+.gradient-text {
+  font-size: 30px;
+  font-weight: bold;
+  color: linear-gradient(90deg, #ff512f, #dd2476);
+  text-align: center;
+}
+</style>
+
+     <h1 class="gradient-text"><%= about[0].heading %></h1>
+   <p class="mt-5"> 
+<%= about[0].text %>
+   </p>   </div>
+
+
+    <style>
+.img-box {
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.img-box img {
+  width: 100%;
+  display: block;
+  transition: all 0.4s ease;
+  border: 3px solid transparent;   
+  filter: grayscale(0%);           
+}
+
+/* Hover Effect */
+.img-box img:hover {
+  border: 3px solid #0d6efd;       
+  filter: grayscale(0%);           
+  transform: scale(1.05);          
+}
+
+    </style>
+<div class="col-md-6 p-5 img-box">
+
+  <img src="/uploads/<%= about[0].image %>" class="img-fluid">
+</div>
+
+
+  </div>
+</div>
+
+
+<div class="container p-5">
+  <div class="row p-4">
+    <div class="col-12 p-5">
+<h1 class="text-center m-4">Our Services</h1>
+<% for(var i=0;i<services.length;i++){ %>
+<h3><i class="fa-solid fa-handshake hand-icon"></i> <%= services[i].service %></h3>
+<p><%= services[i].service_discription %></p>
+<% } %>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+
+    </div>
+  </div>
+</div>
+<style>
+.custom-card{
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  transition: transform .4s ease;
+}
+.custom-card:hover{
+  transform: translateY(-6px);
+}
+.custom-img{
+  border-radius: 16px;
+  object-fit: cover;
+}
+</style>
+</head>
+
+<body class="bg-light">
+
+<div class="container my-5">
+  <div class="custom-card p-4">
+    <div class="row align-items-center">
+
+      <!-- Left Content -->
+      <div class="col-lg-6 col-md-6 col-12 mb-4 mb-md-0">
+       <h2 class="text-bold m-5">Owner / Founder </h2>
+        <h3 class="mb-3">
+          <i class="fa-solid fa-user-tie text-primary me-2"></i>
+      <%= owner[0].owner_name %>
+        </h3>
+        <p class="text-secondary">
+       <%= owner[0].owner_discription %>
+        </p>
+      </div>
+      <!-- Right Image -->
+      <div class="col-lg-6 col-md-6 col-12 text-center">
+        <img src="/uploads/<%= owner[0].image %>"
+             class="img-fluid custom-img"
+             alt="Writer Image">
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+
+<%- include('footer.ejs') %>

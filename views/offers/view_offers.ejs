@@ -1,0 +1,35 @@
+<%- include('../admin/navbar.ejs') %>
+<main class="content">
+<h4 class="text-center">welcome admin  in View Offers Overview</h4>
+    <!-- Cards -->
+    <div class="cards">
+     <div class="container mt-4">
+ <table class="table table-bordered table-hover align-middle text-center">
+    <thead class="table-dark">
+      <tr>
+        <th>#</th>
+        <th>Discount</th>
+        <th>Offer Item</th>
+        <th>model</th>
+        <th>Offer Price</th>
+        <th>Image</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% for(let i=0; i<offers.length; i++){ %>
+      <tr>
+        <td><%= i+1 %></td>
+        <td><%= offers[i].discount %></td>
+        <td><%= offers[i].name %></td>
+        <td><%= offers[i].model %></td>
+        <td><%= offers[i].offer_price %></td>
+         <td><img src="uploads/<%= offers[i].image %>" alt="Offer Image" width="130"></td>
+        <td>  <a href="/admin/offers/update_offers/<%= offers[i].id %>" class="btn btn-primary btn-sm">Edit</a>
+          <a href="/admin/offers/delete_offers/<%= offers[i].id %>" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to delete this offer?')">Delete</a>
+        </td>
+      </tr>
+      <% } %>
+    </tbody>
+  </table>
+</main>

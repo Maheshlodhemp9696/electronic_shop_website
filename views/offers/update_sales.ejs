@@ -1,0 +1,32 @@
+<%- include('../admin/navbar') %>
+
+<main class="content">
+<h4 class="text-center">welcome admin  in Update Sales Overview</h4>
+    <!-- Cards -->
+    <div class="cards">
+     <div class="container mt-4">
+
+ <form action="/admin/offers/save_update_sales/<%= sales.id %>" method="POST" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="title" class="form-label">Sales Title</label>
+    <input type="text" class="form-control" id="title" name="discount" value="<%= sales.discount %>" required>
+  </div>
+  <div class="mb-3">
+    <label for="description" class="form-label">Sales Product</label>
+    <textarea class="form-control" id="description" name="offer_product" rows="3" required><%= sales.offer_product %></textarea>
+  </div>
+   <div class="mb-3">
+    <label for="description" class="form-label">Sales Description</label>
+    <textarea class="form-control" id="description" name="offer_details" rows="3" required><%= sales.offer_details %></textarea>
+  </div>
+   <div class="mb-3">
+    <label for="title" class="form-label">valid date</label>
+    <input type="date" class="form-control" id="title" name="valid" value="<%= sales.valid %>" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Update Sales</button>
+</form>
+</div>
+       </div>   
+       </div>
+</main>
+<%- include('../admin/footer.ejs') %>
